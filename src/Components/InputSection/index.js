@@ -1,4 +1,10 @@
 import React, {useState, useEffect} from 'react'
+import {
+    Input,
+    InputLabel,
+    SubmitButton,
+    InputContainer,
+} from './InputElements'
 
 const InputSection = (props) => {
 
@@ -20,11 +26,11 @@ const InputSection = (props) => {
         }
     }
     return (
-        <>
+        <InputContainer>
             {props.route.postId ? (
                 <>
-                    <label htmlFor='postid' >Post ID</label>
-                    <input onChange={(e)=>setPostSuffix(e.target.value)} name='postid'></input>
+                    <InputLabel htmlFor='postid' >Post ID</InputLabel>
+                    <Input onChange={(e)=>setPostSuffix(e.target.value)} name='postid'></Input>
                 </>) :
                 (
                     <></>
@@ -33,16 +39,16 @@ const InputSection = (props) => {
             }
             {props.route.commentId ? (
                 <>
-                    <label htmlFor='commentid'> comment Id</label>
-                    <input onChange={(e)=>setCommentSuffix(e.target.value)} name='commentid'></input>    
+                    <InputLabel htmlFor='commentid'> comment Id</InputLabel>
+                    <Input onChange={(e)=>setCommentSuffix(e.target.value)} name='commentid'></Input>    
                 </>) :
                 (
                     <></>
                 )
             
             }
-            <button onClick={compileSuffix}>Get Data</button>
-        </>
+            <SubmitButton onClick={compileSuffix}>Get Data</SubmitButton>
+        </InputContainer>
     )
 }
 
