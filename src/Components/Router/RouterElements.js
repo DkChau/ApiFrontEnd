@@ -13,8 +13,8 @@ export const RouteContainer = styled.select`
     margin:0 auto;
     text-align:center;
     border:none;
-    height:40px;
-    font-size:20px;
+    height:2.5rem;
+    font-size:1.25rem;
     border:2px solid black;
     border-bottom:none;
     font-weight:400;

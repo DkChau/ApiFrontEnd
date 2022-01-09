@@ -11,7 +11,8 @@ const InputSection = (props) => {
     const [postSuffix, setPostSuffix] = useState('')
     const [commentSuffix, setCommentSuffix] = useState('')
 
-    const compileSuffix = () =>{
+    const compileSuffix = (e) =>{
+        e.preventDefault();
         if(props.route.postId && props.route.commentId){
             props.getData(`post/${postSuffix}/comment/${commentSuffix}`)
         }
@@ -26,11 +27,11 @@ const InputSection = (props) => {
         }
     }
     return (
-        <InputContainer>
+        <InputContainer onSubmit={compileSuffix}>
             {props.route.postId ? (
                 <>
                     <InputLabel htmlFor='postid' >Post ID</InputLabel>
-                    <Input onChange={(e)=>setPostSuffix(e.target.value)} name='postid'></Input>
+                    <Input required onChange={(e)=>setPostSuffix(e.target.value)} name='postid'></Input>
                 </>) :
                 (
                     <></>
@@ -40,14 +41,14 @@ const InputSection = (props) => {
             {props.route.commentId ? (
                 <>
                     <InputLabel htmlFor='commentid'> comment Id</InputLabel>
-                    <Input onChange={(e)=>setCommentSuffix(e.target.value)} name='commentid'></Input>    
+                    <Input required onChange={(e)=>setCommentSuffix(e.target.value)} name='commentid'></Input>    
                 </>) :
                 (
                     <></>
                 )
             
             }
-            <SubmitButton onClick={compileSuffix}>Get Data</SubmitButton>
+            <SubmitButton>Get Data</SubmitButton>
         </InputContainer>
     )
 }
