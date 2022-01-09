@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.6f6e0ba1.css","mappings":"AAAA,EAGI,qBAAsB,CAFtB,QAAQ,CACR,SAEJ,CACA,MAGI,6BAAiC,CADjC,WAAW,CADX,UAGJ","sources":["index.css"],"sourcesContent":["*{\n    margin:0;\n    padding:0;\n    box-sizing: border-box;\n}\n#root{\n    width:100%;\n    height:100%;\n    font-family: 'Roboto', sans-serif;\n}\n"],"names":[],"sourceRoot":""}
