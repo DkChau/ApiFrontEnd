@@ -15,8 +15,9 @@ export const RouteContainer = styled.select`
     border:none;
     height:40px;
     font-size:20px;
-    border:3px solid black;
+    border:2px solid black;
     border-bottom:none;
+    font-weight:400;
 `
 export const Route = styled.option`
     width:100%;

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { AppContainer, DisplayWrapper, InputWrapper } from './AppElements';
+import { APIWarning, AppContainer, DisplayWrapper, InputWrapper } from './AppElements';
 import DisplaySection from './Components/DisplaySection';
 import InputSection from './Components/InputSection';
 import IntroSection from './Components/IntroSection';
@@ -10,8 +10,8 @@ function App() {
 
     const [route,setRoute] = useState({})
     const [data, setData] = useState('')
+    const [loading, setLoading] = useState(true);
 
-    //Can just disable the button...
     const throttleApiCall = (fn,timeout=3000) => { 
         let timer;
         return (...args) => {
@@ -29,6 +29,7 @@ function App() {
     }
 
     const getData = (url='post') => {
+        setLoading(true)
         fetch(`https://dcblogapi.herokuapp.com/api/${url}`)
         .then(result=>{
             return result.json()
@@ -38,6 +39,11 @@ function App() {
             var myEscapedJSONString = myJSONString.replace(/\\n/g, " ")
             setData(myEscapedJSONString)
         })
+        .then(()=>{
+            setTimeout(()=>{
+                setLoading(false)
+            },1000)
+        })
     }
 
     const throttleData = throttleApiCall(getData,3000)
@@ -46,11 +52,12 @@ function App() {
         <AppContainer>
             <IntroSection/>
             <InputWrapper>
+                <APIWarning>API Requests can only be made once every 3 seconds</APIWarning>
                 <Router routes={routes} chooseRoute = {chooseRoute}/>
                 <InputSection getData={throttleData} route={route}/>
             </InputWrapper>
             <DisplayWrapper>
-                <DisplaySection data={data}/>
+                <DisplaySection loading={loading} heading={route.name} data={data}/>
             </DisplayWrapper>
         </AppContainer>
     );

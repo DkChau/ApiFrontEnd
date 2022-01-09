@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const AppContainer = styled.div`
     display:grid;
     width:100%;
-    min-height:100vh;
+    height:100vh;
+    max-height:100vh;
     grid-template-columns: 600px 1fr 1fr 1fr;
     grid-template-rows: auto 1fr;
     grid-template-areas: 'heading heading heading heading' 'input display display display';
@@ -24,7 +25,9 @@ export const DisplayWrapper = styled.div`
     width:100%;
     height:100%;
     display:flex;
-    justify-content: center;
-    align-items: center;
+    align-items:center;
     background:#F1828D ;
+`
+export const APIWarning = styled.div`
+    padding:30px 0;
 `

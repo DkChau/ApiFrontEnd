@@ -14,11 +14,13 @@ export const InputContainer = styled.div`
 `
 export const InputLabel = styled.label`
     font-size:20px;
+    
 `
 export const Input = styled.input`
     margin:5px 0 20px 0;
     height:30px;
     width:80%;
+    border:2px solid black;
 `
 export const SubmitButton = styled.button`
     width:200px;
@@ -26,6 +28,9 @@ export const SubmitButton = styled.button`
     background:white;
     color:black;
     transition:all 0.2s ease;
+    border:2px solid black;
+    font-size:14px;
+    font-weight:500;
 
     &:hover{
         transform:scale(1.03);

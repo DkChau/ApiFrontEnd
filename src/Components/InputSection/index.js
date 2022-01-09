@@ -21,7 +21,7 @@ const InputSection = (props) => {
         else if(props.route.postId && !props.route.commentId){
             props.getData(`post/${postSuffix}`)
         }
-        else{
+        else if(!(Object.keys(props.route).length === 0)){
             props.getData()
         }
     }

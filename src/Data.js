@@ -10,6 +10,7 @@ export const routes = [
         commentId:false,
         postId:true,
         comment:false,
+
     },
     {
         name:'Get all Comments on a Post',
