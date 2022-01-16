@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { APIWarning, AppContainer, DisplayWrapper, InputWrapper } from './AppElements';
 import DisplaySection from './Components/DisplaySection';
 import InputSection from './Components/InputSection';
@@ -11,14 +11,16 @@ function App() {
     const [route,setRoute] = useState({})
     const [data, setData] = useState('')
     const [loading, setLoading] = useState(true);
+    const [timer, setTimer] = useState(false)
+
 
     const throttleApiCall = (fn,timeout=3000) => { 
-        let timer;
         return (...args) => {
             if (!timer) {
-                fn.apply(this, args);
-                timer = setTimeout(() => {
-                    timer = undefined;
+                setTimer(true)
+                fn.apply(Object.create(null), args);
+                setTimeout(() => {
+                    setTimer(false) 
                 }, timeout);
             }
         };
@@ -46,15 +48,13 @@ function App() {
         })
     }
 
-    const throttleData = throttleApiCall(getData,3000)
-
     return (
         <AppContainer>
             <IntroSection/>
             <InputWrapper>
                 <APIWarning>API Requests can only be made once every 3 seconds</APIWarning>
                 <Router routes={routes} chooseRoute = {chooseRoute}/>
-                <InputSection getData={throttleData} route={route}/>
+                <InputSection getData={throttleApiCall(getData,3000)} route={route}/>
             </InputWrapper>
             <DisplayWrapper>
                 <DisplaySection loading={loading} heading={route.name} data={data}/>

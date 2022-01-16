@@ -1,10 +1,17 @@
 import React from 'react'
-import { IntroContainer } from './IntroElements'
+import { IntroContainer, LinkWrapper,Logo, SiteLink, IntroWrapper } from './IntroElements'
 
 const IntroSection = () => {
     return (
         <IntroContainer>
-            DKC Blog Front-End
+            <IntroWrapper>
+                <Logo>DC API Front-End</Logo>
+                <LinkWrapper>
+                    <SiteLink>Blog API</SiteLink>
+                    <SiteLink>BLOG</SiteLink>
+                    <SiteLink>GITHUB</SiteLink>
+                </LinkWrapper>
+            </IntroWrapper>
         </IntroContainer>
     )
 }

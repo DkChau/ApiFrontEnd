@@ -1,20 +1,5 @@
 import styled from 'styled-components'
 
-export const AppContainer = styled.div`
-    display:grid;
-    width:100%;
-    height:100vh;
-    max-height:100vh;
-    grid-template-columns: 37.5rem 1fr 1fr 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas: 'heading heading heading heading' 'input display display display';
-
-    @media (max-width:1200px){
-       grid-template-columns:1fr;
-       grid-template-rows: auto auto 1fr;
-       grid-template-areas: 'heading' 'input' 'display';
-    }
-`
 export const InputWrapper = styled.div`
     grid-area:input;
     width:100%;
@@ -35,5 +20,28 @@ export const DisplayWrapper = styled.div`
     background:#45ADA8 ;
 `
 export const APIWarning = styled.div`
-    padding:30px 0;
+    padding:2rem 0;
+`
+
+export const AppContainer = styled.div`
+    display:grid;
+    width:100%;
+    height:100vh;
+    max-height:100vh;
+    grid-template-columns: 37.5rem 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'heading heading heading heading' 'input display display display';
+
+    @media (max-width:1200px){
+       grid-template-columns:1fr;
+       grid-template-rows: auto auto 1fr;
+       grid-template-areas: 'heading' 'input' 'display';
+
+       ${InputWrapper}{
+           padding:7rem 0;
+       }
+       ${DisplayWrapper}{
+           padding:7rem 0;
+       }
+    }
 `
