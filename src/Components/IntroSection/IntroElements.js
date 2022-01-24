@@ -15,26 +15,34 @@ export const LinkWrapper = styled.div`
     display:grid;
     width:500px;
     height:100%;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto;
     grid-template-rows: 1fr;
-    justify-content:center;
+    justify-content:space-around;
     align-items:center;
 `
 export const SiteLink = styled.a`
     text-align:center;
     font-size:1.3rem;
+    text-decoration:none;
+    color:#000000;
+    margin:0 10px;
+    font-weight:400;
+
+    &:hover{
+        border-bottom:3px solid #000000;
+    }
 `
 export const IntroContainer = styled.div`
     width:100%;
     height:6.25rem;
-    background:#E5FCC2 ;
+    background:#ffffff ;
     grid-area:heading;
     border-bottom:2px solid black;
     display:flex;
     justify-content: space-between;
     align-items: center;
     font-weight:500;
-    color:black;
+    color:#000000;
 
     @media (max-width:1200px){
         ${IntroWrapper}{

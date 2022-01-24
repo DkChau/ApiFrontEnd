@@ -5,7 +5,7 @@ const DisplaySection = (props) => {
 
     return (
         <DisplayWrapper>
-            {!props.data ? 'Choose a route to obtain data' :
+            {!props.data && !props.loading ? 'Choose a route to obtain data' :
                 <>
                     API DATA
                     <DisplayCode>

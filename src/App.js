@@ -10,7 +10,7 @@ function App() {
 
     const [route,setRoute] = useState({})
     const [data, setData] = useState('')
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [timer, setTimer] = useState(false)
 
 
@@ -54,7 +54,7 @@ function App() {
             <InputWrapper>
                 <APIWarning>API Requests can only be made once every 3 seconds</APIWarning>
                 <Router routes={routes} chooseRoute = {chooseRoute}/>
-                <InputSection getData={throttleApiCall(getData,3000)} route={route}/>
+                <InputSection getData={throttleApiCall(getData,3000)} route={route} loading={loading} setLoading={setLoading} timer={timer}/>
             </InputWrapper>
             <DisplayWrapper>
                 <DisplaySection loading={loading} heading={route.name} data={data}/>

@@ -8,8 +8,7 @@ export const InputWrapper = styled.div`
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    background:#9DE0AD;
-    border-right:2px solid black;
+    background:#F9F5F1;
 `
 export const DisplayWrapper = styled.div`
     grid-area:display;
@@ -17,7 +16,7 @@ export const DisplayWrapper = styled.div`
     height:100%;
     display:flex;
     align-items:center;
-    background:#45ADA8 ;
+    background:#F9F5F1 ;
 `
 export const APIWarning = styled.div`
     padding:2rem 0;

@@ -10,6 +10,7 @@ export const DisplayCode = styled.code`
     display:flex;
     overflow:auto;
     padding:0 6.25rem;
+    font-weight:400;
     margin:0 auto;
 `
 export const Loading = styled.span`
@@ -23,8 +24,8 @@ export const DisplayWrapper = styled.pre`
     border-radius: 15px;
     font-size:2rem;
     font-weight:600;
-    color:#ffffff;
-    background:#765D69;
+    color:#000000;
+    background:#E8DACC;
     margin:0 auto;
     text-align:center;
     border:4px solid black;

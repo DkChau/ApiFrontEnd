@@ -7,9 +7,9 @@ const IntroSection = () => {
             <IntroWrapper>
                 <Logo>DC API Front-End</Logo>
                 <LinkWrapper>
-                    <SiteLink>Blog API</SiteLink>
-                    <SiteLink>BLOG</SiteLink>
-                    <SiteLink>GITHUB</SiteLink>
+                    <SiteLink href={`https://github.com/novaark/BlogApi`} target='_blank'>Blog API</SiteLink>
+                    <SiteLink href={`https://novaark.github.io/Blog/`} target='_blank'>Blog</SiteLink>
+                    <SiteLink href={`https://github.com/novaark/ApiFrontEnd`} target='_blank'>Source Code</SiteLink>
                 </LinkWrapper>
             </IntroWrapper>
         </IntroContainer>
